@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-
 
 // declarando strings
 char estado1[2], codigo1[4], cidade1[50];
@@ -156,46 +154,28 @@ int main() {
     printf("Bem vindo ao Lógica Super Trunfo!\n");
     printf("Preencha com dados da Carta1 e Carta2\n");
     printf("Após preencher os dados, escolha método de comparação\n\n");
-
-    strcpy(estado1,"A");
-    strcpy(codigo1,"A01");
-    strcpy(cidade1, "São Paulo");
-    populacao1=12325000;
-    area1=1521.11;
-    pib1=699.28;
-    pturisticos1=50;
-
-    strcpy(estado2, "B");
-    strcpy(codigo2,"B02");
-    strcpy(cidade2, "Rio de Janeiro");
-    populacao2=6748000;
-    area2=1200.25;
-    pib2=300.50;
-    pturisticos2=30;  
-
-
     
-    // printf("Estado:");
-    // scanf("%s", estado1);
+    printf("Estado:");
+    scanf("%s", estado1);
 
-    // printf("Codigo: ");
-    // scanf("%s", codigo1);
+    printf("Codigo: ");
+    scanf("%s", codigo1);
 
-    // printf("Nome da cidade: ");
-    // getchar();
-    // fgets(cidade1, 50, stdin);
+    printf("Nome da cidade: ");
+    getchar();
+    fgets(cidade1, 50, stdin);
 
-    // printf("Populacao: ");
-    // scanf("%ld", &populacao1);
+    printf("Populacao: ");
+    scanf("%ld", &populacao1);
 
-    // printf("Area: ");
-    // scanf("%f", &area1);
+    printf("Area: ");
+    scanf("%f", &area1);
 
-    // printf("PIB: ");
-    // scanf("%f", &pib1);
+    printf("PIB: ");
+    scanf("%f", &pib1);
 
-    // printf("Numero de Pontos Turisticos: ");
-    // scanf("%d", &pturisticos1);
+    printf("Numero de Pontos Turisticos: ");
+    scanf("%d", &pturisticos1);
 
 
     printf("\n\nDados da Carta1:");
@@ -219,29 +199,29 @@ int main() {
 
     printf("\n\n\n\n");
 
-    // printf("Informe os dados da Carta2:\n");
-    // printf("Estado:");
+    printf("Informe os dados da Carta2:\n");
+    printf("Estado:");
 
-    // scanf("%s", estado2);
+    scanf("%s", estado2);
 
-    // printf("Codigo: ");
-    // scanf("%s", codigo2);
+    printf("Codigo: ");
+    scanf("%s", codigo2);
 
-    // printf("Nome da cidade: ");
-    // getchar();
-    // fgets(cidade2, 50, stdin);
+    printf("Nome da cidade: ");
+    getchar();
+    fgets(cidade2, 50, stdin);
 
-    // printf("Populacao: ");
-    // scanf("%ld", &populacao2);
+    printf("Populacao: ");
+    scanf("%ld", &populacao2);
 
-    // printf("Area: ");
-    // scanf("%f", &area2);
+    printf("Area: ");
+    scanf("%f", &area2);
 
-    // printf("PIB: ");
-    // scanf("%f", &pib2);
+    printf("PIB: ");
+    scanf("%f", &pib2);
 
-    // printf("Numero de Pontos Turisticos: ");
-    // scanf("%d", &pturisticos2);
+    printf("Numero de Pontos Turisticos: ");
+    scanf("%d", &pturisticos2);
 
     printf("\n\nDados da Carta2:\n");
     printf("Estado: %s\n", estado2);
