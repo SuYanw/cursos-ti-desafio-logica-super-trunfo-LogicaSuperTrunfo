@@ -8,8 +8,8 @@ char estado2[2], codigo2[4], cidade2[50];
 
 
 // declarandos numeros inteiros
-int populacao1, pturisticos1;
-int populacao2, pturisticos2;
+unsigned long int populacao1, populacao2;
+int pturisticos1, pturisticos2;
 int poder1, poder2;
 
 // declarando numeros flutuantes
@@ -37,6 +37,7 @@ int EscolherAtributo()
     printf("3 - PIB\n");
     printf("4 - Pontos Turisticos\n");
     printf("5 - Super Poder\n");
+    printf("6 - Densidade Populacional\n");
     printf("Atributo: ");
     scanf("%d", &atributo);
 
@@ -62,6 +63,10 @@ int EscolherAtributo()
             printf("Você escolheu Super Poder como comparativo!\n");
             tributo_escolhido = 5;
             break;
+        case 6: // Densidade Populacional
+            printf("Você escolheu Densidade populacional como comparativo!\n");
+            tributo_escolhido = 6;
+            break;
         default:
             tributo_escolhido = 0;
             break;
@@ -74,7 +79,7 @@ int CalcularAtributo(int atributo)
     switch(atributo){
         case 1: // População
             printf("Método de comparação: POPULAÇÃO\n");
-            printf("População da carta 1: %d, População da carta2: %d\n", populacao1, populacao2);
+            printf("População da carta 1: %ld, População da carta2: %ld\n", populacao1, populacao2);
             if(populacao1 > populacao2){
                 printf("Vencedor é a carta1\n");
             }else if(populacao1 < populacao2){
@@ -127,6 +132,17 @@ int CalcularAtributo(int atributo)
                 printf("Empate!\n");
             }
             break;
+        case 6: // Densidade Populacional
+            printf("Método de comparação: DENSIDADE POPULACIONAL\n");
+            printf("Super poder da carta 1: %.2f, Super poder da carta2: %.2f\n", denspopulacional1, denspopulacional2);
+            if(denspopulacional1 < denspopulacional2){
+                printf("Vencedor é a carta1\n");
+            }else if(poder1 > denspopulacional2){
+                printf("Vencedor é a carta2\n");
+            }else{
+                printf("Empate!\n");
+            }
+            break;
         default:
             break;
     }
@@ -154,7 +170,7 @@ int main() {
     fgets(cidade1, 50, stdin);
 
     printf("Populacao: ");
-    scanf("%d", &populacao1);
+    scanf("%ld", &populacao1);
 
     printf("Area: ");
     scanf("%f", &area1);
@@ -172,7 +188,7 @@ int main() {
     printf("Estado: %s\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", cidade1);
-    printf("População: %d\n", populacao1);
+    printf("População: %ld\n", populacao1);
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pturisticos1);
@@ -197,7 +213,7 @@ int main() {
     fgets(cidade2, 50, stdin);
 
     printf("Populacao: ");
-    scanf("%d", &populacao2);
+    scanf("%ld", &populacao2);
 
     printf("Area: ");
     scanf("%f", &area2);
@@ -215,7 +231,7 @@ int main() {
     printf("Estado: %s\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Nome da Cidade: %s", cidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %ld\n", populacao2);
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pturisticos2);
@@ -228,15 +244,15 @@ int main() {
    
 
     atributo1 = EscolherAtributo();
-    while(atributo1 < 1 || atributo1 > 5){
-        printf("Opção inválida!\n");
-        atributo1 = EscolherAtributo();
+    if(atributo1 < 1 || atributo1 > 6){
+        printf("Opção inválida! Encerrando jogo.");
+        return 0;
     }
 
     atributo2 = EscolherAtributo();
-    while(atributo2 < 1 || atributo2 > 5){
-        printf("Opção inválida!\n");
-        atributo2 = EscolherAtributo();
+    if(atributo2 < 1 || atributo2 > 6){
+        printf("Opção inválida! Encerrando jogo.");
+        return 0;
     }
 
     CalcularAtributo(atributo1);
